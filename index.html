@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CNH Social: guia completo e independente sobre a habilitação gratuita</title>
+<meta name="description" content="Guia informativo e independente sobre a CNH Social: o que é, quem pode participar, documentos, passo a passo e como evitar golpes. Site não oficial, sem vínculo com órgãos do governo.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --asfalto:#24272c;
+  --asfalto-2:#3a3e45;
+  --papel:#fafaf7;
+  --faixa:#f2b705;
+  --placa:#1d6a4c;
+  --placa-claro:#e6f1ec;
+  --alerta:#a8231a;
+  --alerta-claro:#fbeceb;
+  --texto:#24272c;
+  --texto-suave:#555b63;
+  --linha:#d9dad5;
+  --fundo-bloco:#ffffff;
+  --display:"Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif;
+  --corpo:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --papel:#17191c;--texto:#ecebe6;--texto-suave:#b3b6ba;--linha:#33363b;
+    --fundo-bloco:#1f2226;--placa-claro:#1b2b24;--alerta-claro:#2e1b1a;--placa:#4fb488;--alerta:#f0776c;
+  }
+}
+:root[data-theme="dark"]{
+  --papel:#17191c;--texto:#ecebe6;--texto-suave:#b3b6ba;--linha:#33363b;
+  --fundo-bloco:#1f2226;--placa-claro:#1b2b24;--alerta-claro:#2e1b1a;--placa:#4fb488;--alerta:#f0776c;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--papel);color:var(--texto);font-family:var(--corpo);font-size:1.075rem;line-height:1.65}
+img{max-width:100%}
+a{color:var(--placa);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--faixa);outline-offset:3px;border-radius:2px}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem}
+
+/* Aviso fixo de independência */
+.aviso-topo{background:var(--faixa);color:#1c1c1c;font-size:.95rem;line-height:1.45}
+.aviso-topo .wrap{padding-top:.7rem;padding-bottom:.7rem}
+.aviso-topo strong{font-weight:700}
+
+/* Cabeçalho */
+header.hero{background:var(--asfalto);color:#f4f3ee;position:relative;overflow:hidden}
+header.hero .wrap{padding-top:3rem;padding-bottom:3.5rem}
+.marca{font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:.02em;color:#c9cbc4;margin:0 0 2rem}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,9vw,4.4rem);line-height:.98;margin:0 0 1.2rem;letter-spacing:-.005em}
+.hero p.sub{font-size:1.15rem;color:#d6d7d1;margin:0;max-width:34rem}
+.hero .atualizado{margin-top:1.6rem;font-size:.92rem;color:#a9aca5}
+/* faixa de pista tracejada: o elemento marcante da página */
+.pista{height:14px;background:var(--asfalto-2);position:relative}
+.pista::after{content:"";position:absolute;left:0;right:0;top:5px;height:4px;
+  background:repeating-linear-gradient(90deg,var(--faixa) 0 46px,transparent 46px 78px)}
+
+/* Sumário */
+nav.sumario{border-bottom:1px solid var(--linha)}
+nav.sumario .wrap{padding-top:1.6rem;padding-bottom:1.6rem}
+nav.sumario h2{font-family:var(--display);font-size:1.35rem;margin:0 0 .6rem}
+nav.sumario ol{margin:0;padding-left:1.3rem;columns:2;column-gap:2rem}
+nav.sumario li{margin:.15rem 0;break-inside:avoid}
+@media (max-width:560px){nav.sumario ol{columns:1}}
+
+/* Seções */
+main section{padding:2.6rem 0;border-bottom:1px solid var(--linha)}
+main h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,5vw,2.3rem);line-height:1.08;margin:0 0 1rem}
+main h3{font-size:1.1rem;margin:1.6rem 0 .4rem}
+main p{margin:0 0 1rem}
+main ul{padding-left:1.25rem;margin:0 0 1rem}
+main li{margin:.3rem 0}
+.nota{font-size:.95rem;color:var(--texto-suave)}
+
+/* Caixa "varia por estado" em estilo placa indicativa */
+.placa{background:var(--placa-claro);border-left:6px solid var(--placa);padding:1rem 1.2rem;margin:1.4rem 0;border-radius:0 4px 4px 0}
+.placa p:last-child{margin-bottom:0}
+.golpe{background:var(--alerta-claro);border-left:6px solid var(--alerta);padding:1rem 1.2rem;margin:1.4rem 0;border-radius:0 4px 4px 0}
+.golpe p:last-child,.golpe ul:last-child{margin-bottom:0}
+
+/* Passo a passo: sequência real, então numerada */
+ol.passos{list-style:none;padding:0;margin:1.5rem 0 0;counter-reset:passo}
+ol.passos li{counter-increment:passo;position:relative;padding:0 0 1.6rem 3.6rem;margin:0}
+ol.passos li::before{content:counter(passo);position:absolute;left:0;top:-.1rem;width:2.5rem;height:2.5rem;
+  display:grid;place-items:center;background:var(--asfalto);color:var(--faixa);font-family:var(--display);font-weight:700;font-size:1.4rem;border-radius:4px}
+:root[data-theme="dark"] ol.passos li::before{background:#2c3036}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) ol.passos li::before{background:#2c3036}}
+ol.passos li::after{content:"";position:absolute;left:1.2rem;top:2.6rem;bottom:.3rem;width:2px;background:var(--linha)}
+ol.passos li:last-child::after{display:none}
+ol.passos strong{display:block;font-size:1.08rem;margin-bottom:.15rem}
+
+/* Tabela comparativa */
+.tabela-wrap{overflow-x:auto;margin:1.2rem 0}
+table{border-collapse:collapse;width:100%;min-width:32rem;font-size:.98rem;background:var(--fundo-bloco)}
+th,td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid var(--linha);vertical-align:top}
+th{font-family:var(--display);font-size:1.1rem;font-weight:700}
+
+/* FAQ */
+details{border-bottom:1px solid var(--linha);padding:.9rem 0}
+details:first-of-type{border-top:1px solid var(--linha)}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:1.5rem;line-height:1;color:var(--placa)}
+details[open] summary::after{content:"–"}
+details p{margin:.7rem 0 0}
+
+/* Fontes */
+ul.fontes{list-style:none;padding:0}
+ul.fontes li{padding:.55rem 0;border-bottom:1px dashed var(--linha)}
+
+/* Rodapé */
+footer{background:var(--asfalto);color:#cfd1cb;font-size:.95rem}
+footer .wrap{padding-top:2.4rem;padding-bottom:2.6rem}
+footer a{color:#f4f3ee}
+footer .links{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin:0 0 1.4rem;padding:0;list-style:none}
+footer p{margin:0 0 .8rem}
+</style>
+</head>
+<body>
+
+<div class="aviso-topo" role="note">
+  <div class="wrap">
+    <strong>Site informativo e independente.</strong> Não somos o Detran, o Ministério dos Transportes nem qualquer órgão público. Não fazemos inscrições, não cobramos nada e não pedimos seus dados. A inscrição na CNH Social é gratuita e feita somente nos canais oficiais do seu estado.
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="marca">[Nome do seu site]</p>
+    <h1>CNH Social: como funciona a habilitação gratuita</h1>
+    <p class="sub">Um guia em linguagem simples sobre quem pode participar, quais documentos separar, como acompanhar os editais oficiais e como se proteger de golpes.</p>
+    <p class="atualizado">Última revisão: setembro de 2026</p>
+  </div>
+</header>
+<div class="pista" aria-hidden="true"></div>
+
+<nav class="sumario" aria-label="Sumário">
+  <div class="wrap">
+    <h2>Neste guia</h2>
+    <ol>
+      <li><a href="#o-que-e">O que é a CNH Social</a></li>
+      <li><a href="#quem-pode">Quem pode participar</a></li>
+      <li><a href="#o-que-cobre">O que o programa costuma cobrir</a></li>
+      <li><a href="#passo-a-passo">Passo a passo</a></li>
+      <li><a href="#documentos">Documentos para separar</a></li>
+      <li><a href="#novas-regras">Novas regras da CNH em 2026</a></li>
+      <li><a href="#golpes">Como evitar golpes</a></li>
+      <li><a href="#perguntas">Perguntas frequentes</a></li>
+      <li><a href="#fontes">Onde buscar informação oficial</a></li>
+    </ol>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+  <section id="o-que-e" aria-labelledby="t-o-que-e">
+    <h2 id="t-o-que-e">O que é a CNH Social</h2>
+    <p>CNH Social é o nome popular dos programas públicos que pagam o processo da primeira Carteira Nacional de Habilitação (ou a inclusão de uma nova categoria) para pessoas de baixa renda. O objetivo é ampliar o acesso ao emprego e à mobilidade, já que muitas vagas de trabalho pedem habilitação.</p>
+    <p>Não existe um programa único para o país inteiro. Cada estado, e em alguns casos cada município, cria o seu próprio programa, com nome, regras, número de vagas e calendário diferentes. Em alguns lugares ele se chama Habilitação Social, CNH Popular ou CNH Cidadã, por exemplo.</p>
+    <div class="placa">
+      <p><strong>Importante:</strong> as inscrições só acontecem quando o órgão responsável publica um edital. Fora desse período, não há como se inscrever, e qualquer pessoa que ofereça uma "vaga garantida" está mentindo.</p>
+    </div>
+  </section>
+
+  <section id="quem-pode" aria-labelledby="t-quem-pode">
+    <h2 id="t-quem-pode">Quem pode participar</h2>
+    <p>Os critérios exatos estão sempre no edital do seu estado ou município. Os requisitos mais comuns são:</p>
+    <ul>
+      <li>ter 18 anos ou mais;</li>
+      <li>saber ler e escrever;</li>
+      <li>estar inscrito no Cadastro Único (CadÚnico) com os dados atualizados;</li>
+      <li>ter renda familiar dentro do limite definido no edital;</li>
+      <li>morar no estado ou município que oferece o programa;</li>
+      <li>não ter habilitação na categoria pretendida.</li>
+    </ul>
+    <p>Muitos editais reservam parte das vagas ou dão pontuação extra a grupos específicos, como estudantes da rede pública, mulheres em situação de violência doméstica, pessoas com deficiência ou desempregados. A lista de grupos prioritários muda de um edital para outro.</p>
+    <p class="nota">Dica: se você ainda não tem CadÚnico ou ele está desatualizado, procure o CRAS da sua cidade antes de o edital abrir. Esse costuma ser o motivo mais comum de inscrição recusada.</p>
+  </section>
+
+  <section id="o-que-cobre" aria-labelledby="t-o-que-cobre">
+    <h2 id="t-o-que-cobre">O que o programa costuma cobrir</h2>
+    <p>Na maioria dos programas, o governo paga as etapas obrigatórias do processo de habilitação. Isso normalmente inclui:</p>
+    <ul>
+      <li>exame médico e avaliação psicológica;</li>
+      <li>curso teórico e aulas práticas;</li>
+      <li>provas teórica e prática;</li>
+      <li>taxas do Detran e emissão do documento.</li>
+    </ul>
+    <p>As categorias oferecidas geralmente são A (moto) e B (carro). Alguns estados também oferecem categorias profissionais, como C, D e E, ou a mudança de categoria. Confira no edital o que está incluído e se há algum custo que fica por sua conta, como uma nova prova em caso de reprovação.</p>
+  </section>
+
+  <section id="passo-a-passo" aria-labelledby="t-passo">
+    <h2 id="t-passo">Passo a passo</h2>
+    <p>O caminho varia de acordo com o estado, mas quase sempre segue esta ordem:</p>
+    <ol class="passos">
+      <li><strong>Deixe o CadÚnico em dia</strong>Confirme no CRAS que seu cadastro está ativo e com endereço, renda e composição familiar atualizados.</li>
+      <li><strong>Acompanhe o site oficial do Detran do seu estado</strong>É lá, e no Diário Oficial, que o edital é publicado. Confira sempre se o endereço termina em <em>.gov.br</em>.</li>
+      <li><strong>Leia o edital inteiro</strong>Veja requisitos, número de vagas, prazos, documentos exigidos e critérios de classificação.</li>
+      <li><strong>Faça a inscrição gratuita no canal oficial</strong>Preencha o formulário no site do órgão responsável durante o prazo indicado no edital.</li>
+      <li><strong>Acompanhe o resultado</strong>A lista de selecionados sai no site oficial. Muitos editais também chamam candidatos da lista de espera em novas convocações.</li>
+      <li><strong>Confirme sua vaga dentro do prazo</strong>Se for selecionado, apresente os documentos no local e na data indicados. Perder esse prazo pode eliminar você do programa.</li>
+      <li><strong>Faça as etapas da habilitação</strong>Exames, aulas e provas, seguindo as orientações do Detran e o prazo do programa.</li>
+    </ol>
+  </section>
+
+  <section id="documentos" aria-labelledby="t-documentos">
+    <h2 id="t-documentos">Documentos para separar</h2>
+    <p>Organizar tudo antes de o edital abrir evita correria. Os documentos mais pedidos são:</p>
+    <ul>
+      <li>documento de identidade com foto;</li>
+      <li>CPF;</li>
+      <li>comprovante de residência recente;</li>
+      <li>número do NIS ou comprovante de inscrição no CadÚnico;</li>
+      <li>comprovante de renda, quando exigido;</li>
+      <li>comprovante de escolaridade ou de matrícula, para quem concorre em vagas reservadas a estudantes;</li>
+      <li>documentos que comprovem pertencer a um grupo prioritário, quando for o caso.</li>
+    </ul>
+    <p class="nota">A lista definitiva é sempre a do edital do seu estado ou município.</p>
+  </section>
+
+  <section id="novas-regras" aria-labelledby="t-novas-regras">
+    <h2 id="t-novas-regras">Novas regras da CNH em 2026</h2>
+    <p>Independentemente da CNH Social, o processo de habilitação mudou. Em dezembro de 2025, o Conselho Nacional de Trânsito (Contran) aprovou uma resolução que tornou opcional a autoescola nas categorias A e B. Com isso, o custo de tirar a carteira tende a cair bastante para qualquer pessoa.</p>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th scope="col">Etapa</th><th scope="col">Como era</th><th scope="col">Como ficou</th></tr></thead>
+        <tbody>
+          <tr><td>Curso teórico</td><td>Obrigatório em autoescola, com carga horária mínima presencial</td><td>Conteúdo digital gratuito oferecido pelo governo federal, ou autoescola se preferir</td></tr>
+          <tr><td>Aulas práticas</td><td>Mínimo de 20 horas em autoescola</td><td>Mínimo de 2 horas, com autoescola ou instrutor autônomo credenciado pelo Detran</td></tr>
+          <tr><td>Veículo</td><td>Carro da autoescola</td><td>Pode ser o próprio veículo, se atender às exigências de segurança e com instrutor autorizado</td></tr>
+          <tr><td>Provas e exames</td><td colspan="2">Continuam obrigatórios: exame médico, avaliação psicológica, prova teórica e prova prática no Detran</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="nota">A aplicação das novas regras pode ter detalhes diferentes em cada Detran. Confirme no órgão do seu estado antes de começar.</p>
+  </section>
+
+  <section id="golpes" aria-labelledby="t-golpes">
+    <h2 id="t-golpes">Como evitar golpes</h2>
+    <p>Programas de habilitação gratuita atraem golpistas, principalmente em redes sociais e aplicativos de mensagem. Guarde estas regras:</p>
+    <div class="golpe">
+      <ul>
+        <li><strong>A inscrição é sempre gratuita.</strong> Ninguém pode cobrar taxa, Pix ou "garantia de vaga".</li>
+        <li><strong>Só se inscreva em site oficial.</strong> Endereços de órgãos públicos terminam em .gov.br.</li>
+        <li><strong>Desconfie de links recebidos por WhatsApp, SMS ou redes sociais</strong> prometendo inscrição rápida ou aprovação garantida.</li>
+        <li><strong>Não informe senhas</strong> do gov.br, do banco ou códigos recebidos por SMS a ninguém.</li>
+        <li><strong>A seleção segue o edital.</strong> Não existe intermediário, despachante ou "lista VIP" que aumente suas chances.</li>
+      </ul>
+    </div>
+    <p>Se você foi vítima de golpe, registre um boletim de ocorrência (em muitos estados é possível fazer pela internet) e avise seu banco o quanto antes.</p>
+  </section>
+
+  <section id="perguntas" aria-labelledby="t-perguntas">
+    <h2 id="t-perguntas">Perguntas frequentes</h2>
+
+    <details>
+      <summary>Posso me inscrever na CNH Social por este site?</summary>
+      <p>Não. Este é um guia informativo e independente. As inscrições são feitas somente nos canais oficiais do Detran ou do órgão responsável no seu estado ou município.</p>
+    </details>
+
+    <details>
+      <summary>Quando abrem as inscrições?</summary>
+      <p>Cada estado define seu calendário, de acordo com o orçamento e as vagas disponíveis. Alguns abrem editais uma ou duas vezes por ano, outros em lotes. Acompanhe o site oficial do Detran do seu estado e o Diário Oficial.</p>
+    </details>
+
+    <details>
+      <summary>Preciso ter CadÚnico?</summary>
+      <p>Na grande maioria dos programas, sim. O CadÚnico é usado para comprovar a situação de baixa renda. A inscrição e a atualização são feitas no CRAS da sua cidade.</p>
+    </details>
+
+    <details>
+      <summary>Quem já tem CNH pode participar?</summary>
+      <p>Depende do edital. Alguns programas são só para a primeira habilitação; outros também aceitam a inclusão ou mudança de categoria, como passar da B para a D.</p>
+    </details>
+
+    <details>
+      <summary>Minha inscrição foi recusada. E agora?</summary>
+      <p>Verifique o motivo informado pelo órgão. Muitos editais têm um prazo para recurso. Se o problema for documentação ou CadÚnico desatualizado, regularize a situação para participar da próxima edição.</p>
+    </details>
+
+    <details>
+      <summary>Com a autoescola opcional, a CNH Social ainda faz diferença?</summary>
+      <p>Sim. Mesmo com as novas regras, ainda existem custos com exames, taxas do Detran e aulas práticas mínimas. A CNH Social pode cobrir esses valores para quem se enquadra nos critérios.</p>
+    </details>
+
+    <details>
+      <summary>O programa garante a aprovação nas provas?</summary>
+      <p>Não. O programa paga o processo, mas você precisa ser aprovado nos exames e nas provas do Detran como qualquer outro candidato.</p>
+    </details>
+  </section>
+
+  <section id="fontes" aria-labelledby="t-fontes">
+    <h2 id="t-fontes">Onde buscar informação oficial</h2>
+    <p>Para inscrições, datas e regras atualizadas, consulte sempre os canais oficiais:</p>
+    <ul class="fontes">
+      <li><strong>Detran do seu estado:</strong> pesquise "Detran" e a sigla do seu estado (por exemplo, "Detran SP") e confira se o endereço termina em .gov.br.</li>
+      <li><strong>Ministério dos Transportes:</strong> <a href="https://www.gov.br/transportes/pt-br" rel="noopener" target="_blank">gov.br/transportes</a>, para as regras nacionais de habilitação.</li>
+      <li><strong>Cadastro Único:</strong> <a href="https://www.gov.br/mds/pt-br" rel="noopener" target="_blank">gov.br/mds</a>, ou o CRAS da sua cidade.</li>
+      <li><strong>Diário Oficial do seu estado:</strong> onde os editais são publicados oficialmente.</li>
+    </ul>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="links">
+      <li><a href="/sobre">Sobre este site</a></li>
+      <li><a href="/politica-de-privacidade">Política de privacidade</a></li>
+      <li><a href="/termos-de-uso">Termos de uso</a></li>
+      <li><a href="/contato">Contato</a></li>
+    </ul>
+    <p>[Nome do seu site] é um site independente, de caráter exclusivamente informativo. Não temos qualquer vínculo com o Governo Federal, governos estaduais ou municipais, Detrans, Contran ou Ministério dos Transportes. Não prestamos serviços de inscrição, despachante ou intermediação e não cobramos por nenhuma informação.</p>
+    <p>As regras da CNH Social mudam conforme o estado e o edital. Antes de tomar qualquer decisão, confirme as informações nos canais oficiais.</p>
+    <p>© 2026 [Nome do seu site]. Responsável: [razão social ou nome] · [CNPJ, se houver] · [e-mail de contato]</p>
+  </div>
+</footer>
+
+</body>
+</html>
